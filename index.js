@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+// let quijote = new Book({title: "Don Quijote de la Mancha", author: "Miguel de Cervantes Saavedra", numPages: 1200, read: true});
+
+// let harryPotter = new Book({title: "Harry Potter and the philosophal stone", author: "J.K. Rowling", numPages: 600, read: false});
+
+// let prudence = new Book({title: "The art of prudence", author: "Baltasar Gracian", numPages: 120, read: true});
+
+// let library = [quijote, harryPotter, prudence];
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 let library = [];
 
 function Book({title, author, numPages, read}) {
@@ -32,6 +42,7 @@ function addBookToLibrary(e) {
 
     library.push(newBook);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     setLocalStorage();
 
@@ -72,6 +83,11 @@ function editReadBook(element) {
     bookToChangeRead.read = !bookToChangeRead.read;
 
     displayBooks();
+=======
+    console.log(library);
+
+    displayBooks()
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 }
 
 function displayBooks() {
@@ -101,6 +117,7 @@ function displayBooks() {
 
 
       for(let i = 0; i < library.length; i++) {
+<<<<<<< HEAD
         markup += `
         <tr>
             <th scope="row" class="num_index">${i + 1}</th>
@@ -123,6 +140,19 @@ function displayBooks() {
 >>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
             </td>
         </tr>`
+=======
+        markup += `<tr>
+        <th scope="row">${i + 1}</th>
+        <td>${library[i].title}</td>
+        <td>${library[i].author}</td>
+        <td>${library[i].numPages}</td>
+        <td>${library[i].read}</td>
+        <td>
+            <button>Read?</button>
+            <button>Delete</button>
+        </td>
+      </tr>`
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
         }
 
         markup += `</tbody>
@@ -130,6 +160,7 @@ function displayBooks() {
     }
 
     divTable.insertAdjacentHTML("beforeend", markup);
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     const allChangeReadStatus = document.querySelectorAll(".change_read");
@@ -161,6 +192,8 @@ function displayBooks() {
     }
 =======
 >>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
+=======
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -176,6 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
     submitForm.addEventListener("click", function(e){
         e.preventDefault();
         addBookToLibrary();
+<<<<<<< HEAD
     });
 
     getLocalStorage();
@@ -194,3 +228,9 @@ function getLocalStorage() {
 function setLocalStorage() {
     localStorage.setItem('library', JSON.stringify(library));
 }
+=======
+    })
+});
+
+
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table

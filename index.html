@@ -8,13 +8,17 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet"> 
 
+=======
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+<<<<<<< HEAD
         <h1 class="main_title">Library App</h1>
 
         <div class="main_content">
@@ -39,6 +43,53 @@
         </div>
 
         <div id="div_table"></div>
+=======
+        <h1>Library App</h1>
+        <p>Add a new book to the library</p>
+
+        <a type="button" id="displayBookForm">Add New Book</a>
+
+        <form id="form" class="hide_element">
+            <input type="text" placeholder="Title of the book" id="title">
+            <br>
+            <input type="text" placeholder="Name of the author" id="author">
+            <br>
+            <input type="number" placeholder="Number of pages" id="pages">
+            <br>
+            <label><input type="checkbox" id="read">Have you read the book?</label>
+            <br>
+            <button id="submitForm">Add Book</button>
+        </form>
+    
+        <hr>
+        <br>
+
+        <div id="div_table"></div>
+
+        <!-- <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Pages</th>
+                <th scope="col">Read?</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+    
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button>Read?</button><button>Delete</button></td>
+            </tr>
+            </tbody>
+        </table> -->
+>>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 
     </div>
 
