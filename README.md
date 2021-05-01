@@ -26,7 +26,7 @@ Finally the getLocalStorage and setLocalStorage functions are in charge of the b
 In order to run locally this project type the following commands over the terminal in Linux or Mac or the Windows cmd console, install the live-server first:
 
 - npm -g live-server
-- git clone https://github.com/guillainbisimwa/Private_Events.git
+- git clone https://github.com/jose-Abel/libraryApp.git
 - cd libraryApp
 - live-server
 
