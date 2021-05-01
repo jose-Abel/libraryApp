@@ -44,12 +44,15 @@ function removeBookFromLibrary(element) {
     
     library.splice(bookToDeleteIndex, 1);
 
+<<<<<<< HEAD
     localStorage.removeItem("library");
 
     setLocalStorage();
 
     getLocalStorage();
 
+=======
+>>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
     displayBooks();
 }
 
@@ -98,8 +101,13 @@ function displayBooks() {
             <td>${library[i].numPages}</td>
             <td>${library[i].read}</td>
             <td id="table_data_${i}">
+<<<<<<< HEAD
                 <button type="button" class="change_read btn btn-warning">Read?</button>
                 <button type="button" class="delete_book btn btn-danger">Delete</button>
+=======
+                <button class="change_read">Read?</button>
+                <button class="delete_book">Delete</button>
+>>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
             </td>
         </tr>`
         }
