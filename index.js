@@ -32,6 +32,7 @@ function addBookToLibrary(e) {
 
     library.push(newBook);
 
+<<<<<<< HEAD
     setLocalStorage();
 
     displayBooks()
@@ -54,6 +55,13 @@ function removeBookFromLibrary(element) {
 =======
 >>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
     displayBooks();
+=======
+    displayBooks()
+}
+
+function removeBookFromLibrary() {
+
+>>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
 }
 
 function editReadBook(element) {
@@ -102,12 +110,17 @@ function displayBooks() {
             <td>${library[i].read}</td>
             <td id="table_data_${i}">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button type="button" class="change_read btn btn-warning">Read?</button>
                 <button type="button" class="delete_book btn btn-danger">Delete</button>
 =======
                 <button class="change_read">Read?</button>
                 <button class="delete_book">Delete</button>
 >>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
+=======
+                <button class="change_read">Read?</button>
+                <button>Delete</button>
+>>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
             </td>
         </tr>`
         }
@@ -118,17 +131,25 @@ function displayBooks() {
 
     divTable.insertAdjacentHTML("beforeend", markup);
 
+<<<<<<< HEAD
     const allChangeReadStatus = document.querySelectorAll(".change_read");
     const allDeleteBook = document.querySelectorAll(".delete_book");
 
     if(allChangeReadStatus){
         allChangeReadStatus.forEach(btn => {
+=======
+    const changeReadStatus = document.querySelectorAll(".change_read");
+
+    if(changeReadStatus){
+        changeReadStatus.forEach(btn => {
+>>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
             btn.addEventListener("click", function() {
                 let element = this;
                 editReadBook(element);
             });
         })
     }
+<<<<<<< HEAD
 
     if(allDeleteBook){
         allDeleteBook.forEach(btn => {
@@ -138,6 +159,8 @@ function displayBooks() {
             });
         })
     }
+=======
+>>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
 }
 
 document.addEventListener('DOMContentLoaded', function() {
