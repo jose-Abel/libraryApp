@@ -1,24 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-// let quijote = new Book({title: "Don Quijote de la Mancha", author: "Miguel de Cervantes Saavedra", numPages: 1200, read: true});
-
-// let harryPotter = new Book({title: "Harry Potter and the philosophal stone", author: "J.K. Rowling", numPages: 600, read: false});
-
-// let prudence = new Book({title: "The art of prudence", author: "Baltasar Gracian", numPages: 120, read: true});
-
-// let library = [quijote, harryPotter, prudence];
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 let library = [];
-=======
-let quijote = new Book({title: "Don Quijote de la Mancha", author: "Miguel de Cervantes Saavedra", numPages: 1200, read: true});
-
-let harryPotter = new Book({title: "Harry Potter and the philosophal stone", author: "J.K. Rowling", numPages: 600, read: false});
-
-let prudence = new Book({title: "The art of prudence", author: "Baltasar Gracian", numPages: 120, read: true});
-
-let library = [quijote, harryPotter, prudence];
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library
 
 function Book({title, author, numPages, read}) {
     this.title = title;
@@ -32,19 +12,12 @@ function Book({title, author, numPages, read}) {
 }
 
 function displayAddBookForm() {
-<<<<<<< HEAD
     const form = document.getElementById("form");
 
     form.classList.toggle("hide_element");
 }
 
 function addBookToLibrary(e) {
-=======
-    
-}
-
-function addBookToLibrary() {
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library
     let bookTitle = document.getElementById("title").value;
     let authorName = document.getElementById("author").value;
     let pagesNumber = document.getElementById("pages").value;
@@ -59,9 +32,6 @@ function addBookToLibrary() {
 
     library.push(newBook);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     setLocalStorage();
 
     displayBooks()
@@ -74,23 +44,13 @@ function removeBookFromLibrary(element) {
     
     library.splice(bookToDeleteIndex, 1);
 
-<<<<<<< HEAD
     localStorage.removeItem("library");
 
     setLocalStorage();
 
     getLocalStorage();
 
-=======
->>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
     displayBooks();
-=======
-    displayBooks()
-}
-
-function removeBookFromLibrary() {
-
->>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
 }
 
 function editReadBook(element) {
@@ -101,11 +61,6 @@ function editReadBook(element) {
     bookToChangeRead.read = !bookToChangeRead.read;
 
     displayBooks();
-=======
-    console.log(library);
-
-    displayBooks()
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 }
 
 function displayBooks() {
@@ -120,16 +75,6 @@ function displayBooks() {
     }
 
     if(library.length > 0){
-=======
-    console.log(library);
-}
-
-function displayBooks() {
-    let markup = "";
-
-    if(library.length > 0){
-        
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library
         markup += `<table class="table">
         <thead>
           <tr>
@@ -137,20 +82,14 @@ function displayBooks() {
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Pages</th>
-<<<<<<< HEAD
             <th scope="col">Read?</th>
-=======
-            <th scope="col">Read it?</th>
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library
             <th scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>`
 
-<<<<<<< HEAD
 
       for(let i = 0; i < library.length; i++) {
-<<<<<<< HEAD
         markup += `
         <tr>
             <th scope="row" class="num_index">${i + 1}</th>
@@ -159,37 +98,10 @@ function displayBooks() {
             <td>${library[i].numPages}</td>
             <td>${library[i].read}</td>
             <td id="table_data_${i}">
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <button type="button" class="change_read btn btn-warning">Read?</button>
                 <button type="button" class="delete_book btn btn-danger">Delete</button>
-=======
-                <button class="change_read">Read?</button>
-                <button class="delete_book">Delete</button>
->>>>>>> 163fa87... Create removeBookFromLibrary function to implement the functionality of deleting a book from library
-=======
-                <button class="change_read">Read?</button>
-                <button>Delete</button>
->>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
             </td>
         </tr>`
-=======
-=======
-      for(let i = 0; i < library.length; i++) {
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library
-        markup += `<tr>
-        <th scope="row">${i + 1}</th>
-        <td>${library[i].title}</td>
-        <td>${library[i].author}</td>
-        <td>${library[i].numPages}</td>
-        <td>${library[i].read}</td>
-<<<<<<< HEAD
-        <td>
-            <button>Read?</button>
-            <button>Delete</button>
-        </td>
-      </tr>`
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
         }
 
         markup += `</tbody>
@@ -197,27 +109,18 @@ function displayBooks() {
     }
 
     divTable.insertAdjacentHTML("beforeend", markup);
-<<<<<<< HEAD
 
-<<<<<<< HEAD
     const allChangeReadStatus = document.querySelectorAll(".change_read");
     const allDeleteBook = document.querySelectorAll(".delete_book");
 
     if(allChangeReadStatus){
         allChangeReadStatus.forEach(btn => {
-=======
-    const changeReadStatus = document.querySelectorAll(".change_read");
-
-    if(changeReadStatus){
-        changeReadStatus.forEach(btn => {
->>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
             btn.addEventListener("click", function() {
                 let element = this;
                 editReadBook(element);
             });
         })
     }
-<<<<<<< HEAD
 
     if(allDeleteBook){
         allDeleteBook.forEach(btn => {
@@ -227,10 +130,6 @@ function displayBooks() {
             });
         })
     }
-=======
->>>>>>> 36809c5... Create the editReadBook function and update the displayBooks function to implement the functionality of editing the read book boolean in the table
-=======
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -246,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
     submitForm.addEventListener("click", function(e){
         e.preventDefault();
         addBookToLibrary();
-<<<<<<< HEAD
     });
 
     getLocalStorage();
@@ -265,28 +163,3 @@ function getLocalStorage() {
 function setLocalStorage() {
     localStorage.setItem('library', JSON.stringify(library));
 }
-=======
-    })
-});
-
-
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
-=======
-        <td><button>Change Read Status</button><button>Delete Book</button></td>
-      </tr>`
-        }
-
-        markup += `</tbody>
-        </table>`;
-    }
-   
-
-    const table = document.getElementById("table");
-
-    table.innerHTML = markup;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    displayBooks();
-});
->>>>>>> 19978a0... Add the table with bootstrap and dynamically from the javascript file to display all the books from the library

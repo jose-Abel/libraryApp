@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     font-family: 'Orelega One', cursive;
 }
@@ -23,8 +22,6 @@ a:hover {
     color: #fff;
 }
 
-=======
->>>>>>> f9c6e8c... Change the behaviour of the buttons for evenListener to prevent default behaviour and have dinamically displaying the table
 .hide_element {
     display:none;
     visibility: hidden;
