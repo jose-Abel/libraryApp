@@ -23,6 +23,6 @@ a:hover {
 }
 
 .hide_element {
-    display:none;
+    display: none;
     visibility: hidden;
 }
