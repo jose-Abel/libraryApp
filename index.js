@@ -1,13 +1,8 @@
-/* eslint-disable no-use-before-define */
-
-/* eslint-disable no-plusplus */
-
-/* eslint-disable func-names */
-
 let library = [];
 
-function Book({ title, author, numPages, read })
-{
+function Book({ 
+    title, author, numPages, read 
+    }) {
     this.title = title;
     this.author = author;
     this.numPages = numPages;
@@ -18,7 +13,7 @@ function Book({ title, author, numPages, read })
     }
 }
 
-function getLocalStorage() {
+function getLocalStorage () {
   const data = JSON.parse(localStorage.getItem('library'));
 
   if (!data) return;
@@ -26,11 +21,11 @@ function getLocalStorage() {
   library = data;
 }
 
-function setLocalStorage() {
+function setLocalStorage () {
   localStorage.setItem('library', JSON.stringify(library));
 }
 
-function displayAddBookForm () 
+function displayAddBookForm ()
 {
     const form = document.getElementById('form');
 
@@ -170,5 +165,3 @@ document.addEventListener('DOMContentLoaded', function() {
     getLocalStorage();
     displayBooks();
 });
-
-/* eslint-enable no-use-before-define */
