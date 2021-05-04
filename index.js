@@ -1,5 +1,3 @@
-/* eslint-disable no-use-before-define */
-
 let library = [];
 
 function Book({
@@ -81,11 +79,37 @@ function displayBooks() {
 
   const allChangeReadStatus = document.querySelectorAll('.change_read');
 
-  addClickToEdit(allChangeReadStatus);
+  allChangeReadStatus.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const indexStr = btn.parentNode.id.slice(-1);
+
+      const bookToChangeRead = library[parseInt(indexStr, 10)];
+
+      bookToChangeRead.read = !bookToChangeRead.read;
+
+      displayBooks();
+    });
+  });
 
   const allDeleteBook = document.querySelectorAll('.delete_book');
 
-  addClickToRemove(allDeleteBook);
+  allDeleteBook.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const indexStr = btn.parentNode.id.slice(-1);
+
+      const bookToDeleteIndex = parseInt(indexStr, 10);
+
+      library.splice(bookToDeleteIndex, 1);
+
+      localStorage.removeItem('library');
+
+      setLocalStorage();
+
+      getLocalStorage();
+
+      displayBooks();
+    });
+  });
 }
 
 function addBookToLibrary() {
@@ -106,48 +130,6 @@ function addBookToLibrary() {
   setLocalStorage();
 
   displayBooks();
-}
-
-function editReadBook() {
-  const indexStr = this.parentNode.id.slice(-1);
-
-  const bookToChangeRead = library[parseInt(indexStr, 10)];
-
-  bookToChangeRead.read = !bookToChangeRead.read;
-
-  displayBooks();
-}
-
-function removeBookFromLibrary() {
-  const indexStr = this.parentNode.id.slice(-1);
-
-  const bookToDeleteIndex = parseInt(indexStr, 10);
-
-  library.splice(bookToDeleteIndex, 1);
-
-  localStorage.removeItem('library');
-
-  setLocalStorage();
-
-  getLocalStorage();
-
-  displayBooks();
-}
-
-function addClickToEdit(elements) {
-  if (elements) {
-    elements.forEach((btn) => {
-      btn.addEventListener('click', editReadBook);
-    });
-  }
-}
-
-function addClickToRemove(elements) {
-  if (elements) {
-    elements.forEach((btn) => {
-      btn.addEventListener('click', removeBookFromLibrary);
-    });
-  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
