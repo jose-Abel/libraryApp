@@ -2,6 +2,8 @@
 
 # Library App
 
+![screenshot](./library_app.png)
+
 The Microverse Library v1.1 project for Javascript module that consists of extending the ‘Book’ example from a previous lesson and turn it into a small Library app.
 
 In this implementation, I create the Book function constructor creates new instances of books objects. 
@@ -13,6 +15,7 @@ The function addBookToLibrary, that is called through an on click event listener
 Finally the table itself has 2 buttons that gets attach event listeners on those buttons, the edit and the delete buttons. To the delete button an on click event listener calls the function removeBookFromLibrary and to the edit button an on click event listener calls the editReadBook function. 
 
 Finally the getLocalStorage and setLocalStorage functions are in charge of the behaviour implies by it's respective names.
+
 
 ## Built With
 - Javascript
