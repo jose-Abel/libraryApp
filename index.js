@@ -128,7 +128,7 @@ function removeBookFromLibrary(element) {
 function editReadBook(element) {
   const indexStr = element.parentNode.id.slice(-1);
 
-  const bookToChangeRead = library[parseInt(indexStr)];
+  const bookToChangeRead = library[parseInt(indexStr, 10)];
 
   bookToChangeRead.read = !bookToChangeRead.read;
 
