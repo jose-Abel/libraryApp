@@ -1,4 +1,5 @@
 /* eslint-disable no-use-before-define */
+/* eslint-disable func-names */
 
 let library = [];
 
@@ -58,7 +59,7 @@ function displayBooks() {
         </thead>
         <tbody>`;
 
-    for (let i = 0; i < library.length; i++) {
+    for (let i = 0; i < library.length; i += 1) {
       markup += `
         <tr>
             <th scope="row" class="num_index">${i + 1}</th>
@@ -111,7 +112,7 @@ function addBookToLibrary() {
 function removeBookFromLibrary(element) {
   const indexStr = element.parentNode.id.slice(-1);
 
-  const bookToDeleteIndex = parseInt(indexStr);
+  const bookToDeleteIndex = parseInt(indexStr, 10);
 
   library.splice(bookToDeleteIndex, 1);
 
