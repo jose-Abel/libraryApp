@@ -1,5 +1,4 @@
 /* eslint-disable no-use-before-define */
-/* eslint-disable func-names */
 
 let library = [];
 
@@ -109,8 +108,18 @@ function addBookToLibrary() {
   displayBooks();
 }
 
-function removeBookFromLibrary(element) {
-  const indexStr = element.parentNode.id.slice(-1);
+function editReadBook() {
+  const indexStr = this.parentNode.id.slice(-1);
+
+  const bookToChangeRead = library[parseInt(indexStr, 10)];
+
+  bookToChangeRead.read = !bookToChangeRead.read;
+
+  displayBooks();
+}
+
+function removeBookFromLibrary() {
+  const indexStr = this.parentNode.id.slice(-1);
 
   const bookToDeleteIndex = parseInt(indexStr, 10);
 
@@ -125,23 +134,10 @@ function removeBookFromLibrary(element) {
   displayBooks();
 }
 
-function editReadBook(element) {
-  const indexStr = element.parentNode.id.slice(-1);
-
-  const bookToChangeRead = library[parseInt(indexStr, 10)];
-
-  bookToChangeRead.read = !bookToChangeRead.read;
-
-  displayBooks();
-}
-
 function addClickToEdit(elements) {
   if (elements) {
     elements.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const element = this;
-        editReadBook(element);
-      });
+      btn.addEventListener('click', editReadBook);
     });
   }
 }
@@ -149,10 +145,7 @@ function addClickToEdit(elements) {
 function addClickToRemove(elements) {
   if (elements) {
     elements.forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const element = this;
-        removeBookFromLibrary(element);
-      });
+      btn.addEventListener('click', removeBookFromLibrary);
     });
   }
 }
