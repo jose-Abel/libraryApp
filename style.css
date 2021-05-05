@@ -1,0 +1,28 @@
+body {
+  font-family: 'Orelega One', cursive;
+}
+
+.main_title {
+  text-align: center;
+}
+
+.main_content {
+  margin-top: 30px;
+}
+
+.secondary_title {
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.hide_element {
+  display: none;
+  visibility: hidden;
+}
