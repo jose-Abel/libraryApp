@@ -33,6 +33,10 @@ In order to run locally this project type the following commands over the termin
 - cd libraryApp
 - live-server
 
+## Live Version
+
+[live version](https://jose-abel-library-app.netlify.app/)
+
 ## Run linters
 For the linters, this tests runs once you make a PR, if you have it in the respective folder. In order to have this tests, after cloning this project:
 
