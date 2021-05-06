@@ -1,16 +1,9 @@
 let library = [];
 
-function Book({
-  title, author, numPages, read,
-}) {
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.read = read;
+const Book = (title, author, numPages, read) => {
+  const bookInfo = () => `${this.title} by ${this.author}, ${this.numPages} pages, ${this.read ? 'read already' : 'not read yet'}`;
 
-  this.info = function () {
-    return `${this.title} by ${this.author}, ${this.numPages} pages, ${this.read ? 'read already' : 'not read yet'}`;
-  };
+  return { title, author, numPages, read, bookInfo }
 }
 
 function getLocalStorage() {
@@ -118,12 +111,7 @@ function addBookToLibrary() {
   const pagesNumber = document.getElementById('pages').value;
   const haveReadIt = document.getElementById('read').checked;
 
-  const newBook = new Book({
-    title: bookTitle,
-    author: authorName,
-    numPages: pagesNumber,
-    read: haveReadIt,
-  });
+  const newBook = Book(bookTitle, authorName, pagesNumber, haveReadIt);
 
   library.push(newBook);
 
