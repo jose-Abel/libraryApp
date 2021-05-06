@@ -3,8 +3,10 @@ let library = [];
 const Book = (title, author, numPages, read) => {
   const bookInfo = () => `${this.title} by ${this.author}, ${this.numPages} pages, ${this.read ? 'read already' : 'not read yet'}`;
 
-  return { title, author, numPages, read, bookInfo }
-}
+  return {
+    title, author, numPages, read, bookInfo,
+  };
+};
 
 function getLocalStorage() {
   const data = JSON.parse(localStorage.getItem('library'));
